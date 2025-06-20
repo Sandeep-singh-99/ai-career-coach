@@ -48,7 +48,7 @@ export default function HeroSection() {
 
           <Link href={"/dashboard"}>
             <Button size={"lg"} className={"px-8"} variant={"outline"}>
-              Get Started
+              Watch Demo
             </Button>
           </Link>
         </div>

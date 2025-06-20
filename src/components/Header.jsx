@@ -32,7 +32,9 @@ export default function Header() {
     <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href={"/"}>
-          <span className="">Ai Career Coach</span>
+          <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text font-bold text-2xl">
+            AI Career Coach
+          </span>
         </Link>
 
         <div className="flex items-center space-x-2 md:space-x-4">
@@ -43,40 +45,39 @@ export default function Header() {
                 <span className="hidden md:block">Dashboard Insights</span>
               </Button>
             </Link>
-          
 
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button className="hidden md:flex">
-                <StarsIcon className="h-4 w-4" />
-                <span className="hidden md:block">Dashboard Insights</span>
-                <ChevronDown className="ml-2 h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem>
-                <Link href={"/resume"} className="flex items-center gap-2">
-                  <FileText className="h-4 w-4" />
-                  <span className="">Resume Builder</span>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link
-                  href={"/ai-cover-letter"}
-                  className="flex items-center gap-2"
-                >
-                  <PenBox className="h-4 w-4" />
-                  <span className="">AI Cover Letter</span>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href={"/interview"} className="flex items-center gap-2">
-                  <GraduationCap className="h-4 w-4" />
-                  <span className="">Interview Prep</span>
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button className="hidden md:flex">
+                  <StarsIcon className="h-4 w-4" />
+                  <span className="hidden md:block">Dashboard Insights</span>
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <Link href={"/resume"} className="flex items-center gap-2">
+                    <FileText className="h-4 w-4" />
+                    <span className="">Resume Builder</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    href={"/ai-cover-letter"}
+                    className="flex items-center gap-2"
+                  >
+                    <PenBox className="h-4 w-4" />
+                    <span className="">AI Cover Letter</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href={"/interview"} className="flex items-center gap-2">
+                    <GraduationCap className="h-4 w-4" />
+                    <span className="">Interview Prep</span>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </SignedIn>
 
           <SignedOut>
@@ -85,13 +86,16 @@ export default function Header() {
             </SignInButton>
           </SignedOut>
           <SignedIn>
-            <UserButton appearance={{
-              elements: {
-                avatarBox: "h-8 w-8",
-                userButtonAvatarBox: "h-8 w-8",
-                userButtonAvatar: "h-8 w-8",
-              }
-            }} afterSignOutUrl="/" />
+            <UserButton
+              appearance={{
+                elements: {
+                  avatarBox: "h-8 w-8",
+                  userButtonAvatarBox: "h-8 w-8",
+                  userButtonAvatar: "h-8 w-8",
+                },
+              }}
+              afterSignOutUrl="/"
+            />
           </SignedIn>
         </div>
       </nav>
