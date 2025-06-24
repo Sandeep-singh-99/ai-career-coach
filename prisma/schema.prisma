@@ -83,7 +83,7 @@ model IndustryInsight {
   topSkills String[]
   marketOutlook String
   keyTrends String[]
-  recommendSkills String[]
+  recomendSkills String[]
   lastUpdated DateTime @default(now())
   nextUpdate DateTime
   @@index([industry])

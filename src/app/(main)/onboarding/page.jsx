@@ -2,7 +2,7 @@ import React from 'react'
 import { industries } from '../../../../data/industries'
 import { fetchUserOnBoardingData } from '../../../../actions/user'
 import { redirect } from 'next/navigation'
-import OnBoardingForm from './_components/onboardingForm'
+import OnBoardingForm from './_components/onboardingform'
 
 export default async function onboarding() {
   const {isOnboarded } = await fetchUserOnBoardingData()

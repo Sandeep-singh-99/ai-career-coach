@@ -34,18 +34,18 @@ export async function updateUser(data) {
                         industry: data.industry,
                         salaryRange: [],
                         growthRate: 0,
-                        demandLevel: "Medium",
+                        demandLevel: "MEDIUM",
                         topSkills: [],
-                        marketOutlook: "Neutral",
+                        marketOutlook: "NEUTRAL",
                         keyTrends: [],
-                        recomendedSkills: [],
+                        recomendSkills: [],
                         nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) // 1 week later
                     }
                 })
             }
 
             // update the user
-            const updatedUser = await t.user.Update({
+            const updatedUser = await t.user.update({
                 where: {
                     id: user.id,
                 },
@@ -62,10 +62,10 @@ export async function updateUser(data) {
             timeout: 10000, // 10 seconds
         })
 
-        return response.user;
+        return { success: true, ...response }
     } catch (error) {
         console.log('Error updating user:', error.message);
-        throw new Error('Failed to update user');
+        throw new Error('Failed to update user'+ error.message);
     }
 }
 
