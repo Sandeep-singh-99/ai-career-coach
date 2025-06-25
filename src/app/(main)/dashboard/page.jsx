@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation'
 import { getIndustryInsights } from '../../../../actions/dashboard'
 import DashboardView from './_components/dashboard-view'
 
+
 export default async function IndustryInsightsPage() {
      const {isOnboarded } = await fetchUserOnBoardingData()
      const insights = await getIndustryInsights()
