@@ -5,6 +5,7 @@ import React from 'react'
 import { toast } from 'sonner'
 import { deleteCoverLetter } from '../../../../../actions/cover-letter'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { format } from 'date-fns'
 
 export default function CoverLetterList({ coverLetters }) {
     const router = useRouter()
@@ -32,8 +33,25 @@ export default function CoverLetterList({ coverLetters }) {
         );
     }
   return (
-    <div>
-
+    <div className='space-y-4'>
+        {
+            coverLetters.map((letter) => (
+                <Card key={letter.id} className={"group relative"}>
+                    <CardHeader>
+                        <div className='flex items-center justify-between'>
+                            <div>
+                                <CardTitle className={"text-xl gradient-title"}>
+                                    {letter.jobTitle} at {letter.companyName}
+                                </CardTitle>
+                                <CardDescription>
+                                    Created {format(new Date(letter.createdAt), 'ppp')}
+                                </CardDescription>
+                            </div>
+                        </div>
+                    </CardHeader>
+                </Card>
+            ))
+        }
     </div>
   )
 }
