@@ -7,7 +7,7 @@ RUN npm install
 
 # Copy app files and env
 COPY . .
-COPY .env .env
+COPY .env.production .env
 
 RUN npx prisma generate
 RUN npm run build
